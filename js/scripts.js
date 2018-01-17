@@ -52,3 +52,26 @@ function languagePractice(){
     alert('I love ' + languagePracticeResult[i] + '!');
   }
 }
+
+function factorial(input){
+  var output = 1;
+  for(var c = 1; c <=input; c+=1) {
+    output *= c;
+  }
+   return output;
+}
+
+function palindromes(input){
+  var length = input.length;
+  var center = Math.floor(length/2 + 1);
+  if(length%2!=1){
+    return false;
+  } else {
+    for(var i=2; i < length/2 + 1; i++){
+      if(input[center+i-2] != input[center-i]){
+        return false;
+      }
+    }
+    return true;
+  }
+}

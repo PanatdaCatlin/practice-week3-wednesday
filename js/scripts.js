@@ -115,3 +115,40 @@ function removeMe(inputArray){
     return inputArray.indexOf(val) == -1;
   });
 }
+function wordPuzzle(wordInput){
+  var wordLength = wordInput.length;
+  var wordOut = [];
+  for(var i = 0; i < wordLength; i ++){
+    if(wordInput[i]==="a"||wordInput[i]==="e"||wordInput[i]==="i"||wordInput[i]==="o"||wordInput[i]==="u"){
+      wordOut[i]="-";
+      } else {
+        wordOut[i] = wordInput[i];
+    }
+  }
+  console.log(wordOut);
+  while(wordOut.includes("-")){
+    var userInput = prompt("Enter your guess for the next '-'!");
+    if(wordInput[wordOut.indexOf('-')]===userInput){
+      wordOut[wordOut.indexOf('-')]=userInput;
+      console.log(wordOut);
+    } else {
+      alert("You entered the wrong vowel.");
+    }
+  }
+}
+$(document).ready(function(){
+  $("form#transportation_survey").submit(function(event){
+    event.preventDefault();
+    $("#work-responses").show();
+    $("input:checkbox[name=work-transportation]:checked").each(function(){
+      var workTransportationMode = $(this).val();
+      $('#work-responses').append(workTransportationMode + "<br>");
+    });
+    $("#fun-responses").show();
+    $("input:checkbox[name=fun-transportation]:checked").each(function(){
+      var funTransportationMode = $(this).val();
+      $('#fun-responses').append(funTransportationMode + "<br>");
+    });
+    $('#transportation_survey').hide();
+  });
+});

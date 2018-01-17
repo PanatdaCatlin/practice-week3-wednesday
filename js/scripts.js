@@ -1,5 +1,6 @@
 var output;
 var arrPractice = [7,14,21,28,35,42,49];
+var listOfNumbers = [];
 function loopOne(){
   var loopOneOutput = [];
   var j = 0;
@@ -9,7 +10,6 @@ function loopOne(){
   }
   return loopOneOutput.toString();
 }
-
 function loopTwo(){
 
   var loopTwoOutput = [];
@@ -22,7 +22,6 @@ function loopTwo(){
   return loopTwoOutput.toString();
 
 }
-
 function outputArr(countBy, countTo){
 
   if(countBy<0 || countTo<0){
@@ -44,7 +43,6 @@ function outputArr(countBy, countTo){
   }
 
 }
-
 function languagePractice(){
   var languagePracticeResult = ['HTML', 'CSS', 'JavaScript'];
   var arrLength = languagePracticeResult.length;
@@ -52,7 +50,6 @@ function languagePractice(){
     alert('I love ' + languagePracticeResult[i] + '!');
   }
 }
-
 function factorial(input){
   var output = 1;
   for(var c = 1; c <=input; c+=1) {
@@ -60,7 +57,6 @@ function factorial(input){
   }
    return output;
 }
-
 function palindromes(input){
   var length = input.length;
   var center = Math.floor(length/2 + 1);
@@ -73,5 +69,33 @@ function palindromes(input){
       }
     }
     return true;
+  }
+}
+function primeSifting(inputIteration){
+  var primeList = [2];
+  
+
+}
+function primeChecker(inputPrime){
+  for(var i=2; i <= inputPrime; i ++){
+    for(var j = 2; j <= inputPrime; j ++){
+      if(i*j===inputPrime){
+        return false;
+      }
+    }
+  }
+  return true;
+}
+function primeMultiplies(inputPrime){
+  var outputArray = [];
+  for(var i = 1; i <= 10000/inputPrime; i ++){
+    outputArray.push(inputPrime*i);
+  }
+  return outputArray;
+}
+
+function populateMe(){
+  for(var i = 2; i <= 10000; i ++){
+    listOfNumbers.push(i);
   }
 }

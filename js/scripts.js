@@ -44,3 +44,11 @@ function outputArr(countBy, countTo){
   }
 
 }
+
+function languagePractice(){
+  var languagePracticeResult = ['HTML', 'CSS', 'JavaScript'];
+  var arrLength = languagePracticeResult.length;
+  for(var i = 0; i < arrLength; i ++){
+    alert('I love ' + languagePracticeResult[i] + '!');
+  }
+}

@@ -71,9 +71,21 @@ function palindromes(input){
     return true;
   }
 }
-function primeSifting(inputIteration){
+function primeSifting(max){
   var primeList = [2];
-  
+  var currentVal = listOfNumbers[0];
+  populateMe(max);
+  for(var i = 1; i < listOfNumbers.length; i ++){
+    currentVal = listOfNumbers[i]
+    if(primeChecker){
+      removeMe(primeMultiplies(currentVal,max));
+      primeList.push(currentVal);
+    } else {
+      removeMe(primeMultiplies(currentVal,max));
+    }
+
+  }
+  return primeList.toString();
 
 }
 function primeChecker(inputPrime){
@@ -86,16 +98,20 @@ function primeChecker(inputPrime){
   }
   return true;
 }
-function primeMultiplies(inputPrime){
+function primeMultiplies(inputPrime, inputSize){
   var outputArray = [];
-  for(var i = 1; i <= 10000/inputPrime; i ++){
+  for(var i = 1; i <= inputSize/inputPrime; i ++){
     outputArray.push(inputPrime*i);
   }
   return outputArray;
 }
-
-function populateMe(){
-  for(var i = 2; i <= 10000; i ++){
+function populateMe(max){
+  for(var i = 2; i <=max; i ++){
     listOfNumbers.push(i);
   }
+}
+function removeMe(inputArray){
+  listOfNumbers = listOfNumbers.filter(function(val){
+    return inputArray.indexOf(val) == -1;
+  });
 }
